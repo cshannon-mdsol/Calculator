@@ -58,6 +58,15 @@ class MyTestCase(unittest.TestCase):
             print(self.calculator.result)
         print("^^^^^^^^Square^^^^^^^^")
 
+    def test_squareroot(self):
+        test_data = CsvReader('/src/Square_Root.csv').data
+        for row in test_data:
+            self.calculator.sqroot(int(row['Value 1']))
+            self.assertAlmostEqual(self.calculator.result, float(row['Result']))
+
+            print(self.calculator.result)
+        print("^^^^^^^^Square Root^^^^^^^^")
+
     def test_results_property(self):
         self.assertEqual(self.calculator.result, 0)
 

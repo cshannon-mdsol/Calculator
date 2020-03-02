@@ -34,6 +34,12 @@ def square(a):
     return b
 
 
+def squareroot(a):
+    a = float(a)
+    b = a**(1/2)
+    return b
+
+
 class Calculator:
     result = 0
 
@@ -58,4 +64,8 @@ class Calculator:
 
     def square(self, a):
         self.result = square(a)
+        return self.result
+
+    def sqroot(self, a):
+        self.result = squareroot(a)
         return self.result
