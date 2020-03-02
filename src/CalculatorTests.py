@@ -49,6 +49,15 @@ class MyTestCase(unittest.TestCase):
             print(self.calculator.result)
         print("^^^^^^^^Division^^^^^^^^")
 
+    def test_square(self):
+        test_data = CsvReader('/src/Square.csv').data
+        for row in test_data:
+            self.calculator.square(int(row['Value 1']))
+            self.assertEqual(self.calculator.result, int(row['Result']))
+
+            print(self.calculator.result)
+        print("^^^^^^^^Square^^^^^^^^")
+
     def test_results_property(self):
         self.assertEqual(self.calculator.result, 0)
 
