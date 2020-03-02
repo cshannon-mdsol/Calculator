@@ -5,6 +5,7 @@ from Calculator import Calculator
 from CsvReader import CsvReader
 
 
+
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.calculator = Calculator()
@@ -19,6 +20,7 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.result, int(row['Result']))
 
             print(self.calculator.result)
+        print("^^^^^^^^Subtraction^^^^^^^^")
 
     def test_addition(self):
         test_data = CsvReader('/src/Addition.csv').data
@@ -27,6 +29,7 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.result, int(row['Result']))
 
             print(self.calculator.result)
+        print("^^^^^^^^Addition^^^^^^^^")
 
     def test_multiplication(self):
         test_data = CsvReader('/src/Multiplication.csv').data
@@ -35,6 +38,16 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.result, int(row['Result']))
 
             print(self.calculator.result)
+        print("^^^^^^^^Multiplication^^^^^^^^")
+
+    def test_division(self):
+        test_data = CsvReader('/src/Division.csv').data
+        for row in test_data:
+            self.assertAlmostEqual(self.calculator.divide(row['Value 1'], row['Value 2']), float(row['Result']))
+            self.assertAlmostEqual(self.calculator.result, float(row['Result']))
+
+            print(self.calculator.result)
+        print("^^^^^^^^Division^^^^^^^^")
 
     def test_results_property(self):
         self.assertEqual(self.calculator.result, 0)
