@@ -33,8 +33,8 @@ class MyTestCase(unittest.TestCase):
         print("________Multiplication________")
         test_data = CsvReader('/src/csv/Multiplication.csv').data
         for row in test_data:
-            self.assertEqual(self.calculator.multiply(row['Value 1'], row['Value 2']), int(row['Result']))
-            self.assertEqual(self.calculator.result, int(row['Result']))
+            self.assertEqual(self.calculator.multiply(row['Value 1'], row['Value 2']), float(row['Result']))
+            self.assertEqual(self.calculator.result, float(row['Result']))
 
             print(row['Value 2'], '*', row['Value 1'], '=', self.calculator.result)
 

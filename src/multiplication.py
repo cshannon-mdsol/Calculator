@@ -1,5 +1,5 @@
 def multiplication(a, b):
-    a = int(a)
-    b = int(b)
+    a = float(a)
+    b = float(b)
     c = a * b
     return c
