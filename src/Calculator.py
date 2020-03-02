@@ -30,13 +30,13 @@ def division(a, b):
 
 def square(a):
     a = int(a)
-    b = a**2
+    b = a ** 2
     return b
 
 
 def squareroot(a):
     a = float(a)
-    b = a**(1/2)
+    b = a ** (1 / 2)
     return b
 
 
