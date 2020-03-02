@@ -1,8 +1,13 @@
 def addition(a, b):
-    return a + b
+    c = a + b
+    return c
+
 
 def subtraction(a, b):
-    return a - b
+    a = int(a)
+    b = int(b)
+    c = b - a
+    return c
 
 
 class Calculator:
@@ -18,3 +23,4 @@ class Calculator:
     def subtract(self, a, b):
         self.result = subtraction(a, b)
         return self.result
+
